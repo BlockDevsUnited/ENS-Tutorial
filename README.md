@@ -39,3 +39,9 @@ A fully working sample Dapp is included.
     <li>Test your domain registration by sending ether to your new domain name using Metamask.</li>
 </ol>
 
+- Test your domain registration by sending ether to your new domain name using Metamask.
+
+What is the resolver contract?
+(explain)
+there are multiple
+you can deploy your own if you really want to
