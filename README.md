@@ -18,16 +18,6 @@ A fully working sample Dapp is included.
 4) Build Dapp
 
 
-
-
-A fully working sample Dapp is included.
-
-1) Register your ENS domain name
-2) Build front end
-3) Build smart contract
-4) Build Dapp
-
-
 install metamask
 create a wallet
 go to ropsten test network
@@ -36,7 +26,7 @@ get testnet ether (click deposit, then Test faucet)
 To Register an ENS domain name, go to app.ens.domains.
 - search a name
 - Detailed instructions on the website will walk you through name registration
-- Register a domain, e.g. cooldomain.eth
+- Register a domain, e.g. toothbrush.eth
 - Once you have registered the domain name, you can do the following
 
 * Set the resolver (The smart contract which translates names into addresses)
@@ -45,6 +35,8 @@ To Register an ENS domain name, go to app.ens.domains.
 * Set a Reverse Record (allowing you to translate the above address back into the name)
 * Transfer Registration (Transfer ownership of the domain)
 * Set the controller (Transfer admin privileges to another address)
-* Register subdomains, e.g. abc.cooldomain.eth and abcd.cooldomain.eth
+* Register subdomains, e.g. abc.toothbrush.eth and abcd.toothbrush.eth
+
+
 
 ##
