@@ -25,3 +25,11 @@ async function send(){
   let sendPromise = signer.sendTransaction(tx);
 
 }
+
+let tokenAddress, tokenABI, tokenContract
+
+async function loadToken(){
+  address = document.getElementById("tokenAddress")
+
+
+}
