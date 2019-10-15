@@ -41,6 +41,8 @@ To Register an ENS domain name, go to app.ens.domains.
 * Set the controller (Transfer admin privileges to another address)
 * Register subdomains, e.g. abc.toothbrush.eth and abcd.toothbrush.eth
 
+- Test your domain registration by sending ether to your new domain name using Metamask.
+
 
 
 
