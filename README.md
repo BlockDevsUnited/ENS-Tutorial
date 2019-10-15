@@ -32,7 +32,19 @@ install metamask
 create a wallet
 go to ropsten test network
 get testnet ether (click deposit, then Test faucet)
-go to app.ens.domains
-search a name
-follow instructions and register the name
-Click Manage Name
+
+To Register an ENS domain name, go to app.ens.domains.
+- search a name
+- Detailed instructions on the website will walk you through name registration
+- Register a domain, e.g. cooldomain.eth
+- Once you have registered the domain name, you can do the following
+
+* Set the resolver (The smart contract which translates names into addresses)
+    It's easiest to just use the default resolver and click save
+* Set the address (Ethereum address which the domain points to)
+* Set a Reverse Record (allowing you to translate the above address back into the name)
+* Transfer Registration (Transfer ownership of the domain)
+* Set the controller (Transfer admin privileges to another address)
+* Register subdomains, e.g. abc.cooldomain.eth and abcd.cooldomain.eth
+
+##
