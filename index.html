@@ -7,6 +7,12 @@ initialize(web3)
 <body>
   <h1 id="myAddress">Address: </h1>
   <h1 id="myEthBalance">My Eth Balance: </h1>
+
+
+  <input id="addressTo" placeholder="Send to..."></input><br>
+  <input id="toAmount" placeholder="Amount"></input><br>
+  <button onClick="send()">Send</button><br>
+
   <hr>
 
   <span id="name">Token: </span><br>
@@ -18,6 +24,5 @@ initialize(web3)
   <br>
 
   <input id="transferTo" placeholder="transfer to..." ></input><input id="transferAmount" placeholder="amount"></input><button onclick="transfer()">Transfer</button><br>
-  <input id="transferFromFrom" placeholder="transfer from..." ><input id="transferFromTo" placeholder="transfer to..."><input id="transferFromAmount" placeholder="amount"></input><button onclick="transferFrom()">Transfer From</button>
 </body>
 </html>
