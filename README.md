@@ -18,7 +18,7 @@ A fully working sample Dapp is included.
 
 
 ### Getting Started
-<ol>
+<ul>
     <li>To Register an ENS domain name, go to app.ens.domains.</li>
     <li>Search the name you want for your domain</li>
     <li>Detailed instructions on the website will walk you through name registration</li>
@@ -37,7 +37,7 @@ A fully working sample Dapp is included.
     <li>Set the controller (Transfer admin privileges to another address)</li>
     <li>Register subdomains, e.g. abc.toothbrush.eth and abcd.toothbrush.eth</li>
     <li>Test your domain registration by sending ether to your new domain name using Metamask.</li>
-</ol>
+</ul>
 
 - Test your domain registration by sending ether to your new domain name using Metamask.
 
