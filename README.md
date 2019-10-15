@@ -31,11 +31,16 @@ To Register an ENS domain name, go to app.ens.domains.
 
 * Set the resolver (The smart contract which translates names into addresses)
     It's easiest to just use the default resolver and click save
-* Set the address (Ethereum address which the domain points to)
+* Set ENS records
+  * address (Ethereum address which the domain points to)
+  * other addresses (Other cryptocurrency addresses the domain points to)
+  * content (IPFS hash the domain points to)
+  * text (text content the domain points to)
 * Set a Reverse Record (allowing you to translate the above address back into the name)
 * Transfer Registration (Transfer ownership of the domain)
 * Set the controller (Transfer admin privileges to another address)
 * Register subdomains, e.g. abc.toothbrush.eth and abcd.toothbrush.eth
+
 
 
 
