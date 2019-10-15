@@ -12,6 +12,16 @@ async function initialize(web3){
 async fucntion send(){
   let address = document.getElementByID("addressTo")
   let amount = parseAmount(document.getElementByID("toAmount"))
+  let tx = {
+      to: address,
+      // ... or supports ENS names
+      // to: "ricmoo.firefly.eth",
 
+      // We must pass in the amount as wei (1 ether = 1e18 wei), so we
+      // use this convenience function to convert ether to wei.
+      value: ethers.utils.parseEther(amount)
+  };
+
+  let sendPromise = wallet.sendTransaction(tx);
 
 }
