@@ -12,4 +12,5 @@ A fully working sample Dapp is included.
 4) Build Dapp
 
 
+ENS stands for the Ethereum Name Service, a service that creates human-readable names for Ethereum addresses and other content.
 https://ethgasstation.info/blog/what-is-ens/
