@@ -428,13 +428,11 @@ async function send(){
   let sendPromise = signer.sendTransaction(tx);
 }
 
-async function resolveAddress(ensName){
+async function resolveAddress(address){
 
-    if (ensName.includes(".")){
-			console.log(ensName)
+    if (address.includes(".")){
 			let nameHash = utils.namehash(ensName)
-			ensName = await resolverContract.addr(nameHash)
+			address = await resolverContract.addr(nameHash)
 		}
-console.log(ensName)
-		return ensName
+		return address
 }
