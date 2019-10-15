@@ -9,7 +9,7 @@ async function initialize(web3){
   signer = provider.getSigner(accounts[0])
 }
 
-async fucntion send(){
+async function send(){
   let address = document.getElementByID("addressTo")
   let amount = parseAmount(document.getElementByID("toAmount"))
   let tx = {
@@ -20,8 +20,8 @@ async fucntion send(){
       // We must pass in the amount as wei (1 ether = 1e18 wei), so we
       // use this convenience function to convert ether to wei.
       value: ethers.utils.parseEther(amount)
-  };
+  }
 
-  let sendPromise = wallet.sendTransaction(tx);
+  let sendPromise = signer.sendTransaction(tx);
 
 }
