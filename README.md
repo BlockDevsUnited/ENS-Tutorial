@@ -36,7 +36,7 @@ To Register an ENS domain name, go to app.ens.domains.
   * other addresses (Other cryptocurrency addresses the domain points to)
   * content (IPFS hash the domain points to)
   * text (text content the domain points to)
-* Set a Reverse Record (allowing you to translate the above address back into the name)
+* Set a Reverse Record (allowing you to translate an Ethereum address back into the name)
 * Transfer Registration (Transfer ownership of the domain)
 * Set the controller (Transfer admin privileges to another address)
 * Register subdomains, e.g. abc.toothbrush.eth and abcd.toothbrush.eth
