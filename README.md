@@ -1,9 +1,6 @@
 ## ENS Tutorial
 
-### Introduction
-
-The ethereum naming service creates human readable names for Ethereum addresses and other content.
-
+(introduce ENS)
 
 This tutorial will teach you how to interact with the ENS, and then integrate ENS functions into a simple front end Dapp.
 
@@ -15,10 +12,4 @@ A fully working sample Dapp is included.
 4) Build Dapp
 
 
-install metamask
-create a wallet
-go to ropsten test network
-get testnet ether (click deposit, then Test faucet)
-go to app.ens.domains
-search a name
-follow instructions and register the name
+https://ethgasstation.info/blog/what-is-ens/
