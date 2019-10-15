@@ -10,8 +10,8 @@ async function initialize(web3){
 }
 
 async function send(){
-  let address = document.getElementByID("addressTo")
-  let amount = parseAmount(document.getElementByID("toAmount"))
+  let address = document.getElementById("addressTo").value
+  let amount = document.getElementById("toAmount").value
   let tx = {
       to: address,
       // ... or supports ENS names
