@@ -2,12 +2,6 @@
 
 ### Introduction
 
-The ENS, Ethereum Naming Service, is a decentralized naming service on Ethereum, built using smart contracts. The ENS creates human-readable names for Ethereum addresses and other content.
-https://ethgasstation.info/blog/what-is-ens/
-
-
-### Hands on Tutorial
-
 This tutorial will teach you how to interact with the ENS, and then integrate ENS functions into a simple front end Dapp.
 
 A fully working sample Dapp is included.
@@ -16,6 +10,12 @@ A fully working sample Dapp is included.
 2) Build front end
 3) Build smart contract
 4) Build Dapp
+
+The ENS, Ethereum Naming Service, is a decentralized naming service on Ethereum, built using smart contracts. The ENS creates human-readable names for Ethereum addresses and other content.
+https://ethgasstation.info/blog/what-is-ens/
+
+
+### Hands on Tutorial
 
 
 install metamask
