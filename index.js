@@ -395,6 +395,8 @@ let resolverABI = [
 ]
 let resolvercontract;
 
+
+
 async function initialize(web3){
   ethereum.enable()
 
@@ -407,10 +409,6 @@ async function initialize(web3){
   resolverContract = new ethers.Contract(resolverContractAddress,resolverABI,signer)
 
 }
-
-
-
-
 
 async function send(){
   let address = document.getElementById("addressTo").value
@@ -431,7 +429,7 @@ async function send(){
 async function resolveAddress(address){
 
     if (address.includes(".")){
-			let nameHash = utils.namehash(ensName)
+			let nameHash = utils.namehash(address)
 			address = await resolverContract.addr(nameHash)
 		}
 		return address
