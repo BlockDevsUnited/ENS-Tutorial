@@ -26,14 +26,12 @@ A fully working sample Dapp is included.
     <li>Once you have registered the domain name, you can do the following</li>
     <li>Set the resolver (The smart contract which translates names into addresses) It's easiest to just use the default resolver and click save</li>
     <li>Set ENS records</li>
-    <li>
         <ul>
             <li>address (Ethereum address which the domain points to)</li>
             <li>other addresses (Other cryptocurrency addresses the domain points to)</li>
             <li>content (IPFS hash the domain points to)</li>
             <li>text (text content the domain points to)</li>
         </ul>
-    </li>
     <li>Set a Reverse Record (allowing you to translate an Ethereum address back into the name)</li>
     <li>Transfer Registration (Transfer ownership of the domain)</li>
     <li>Set the controller (Transfer admin privileges to another address)</li>
