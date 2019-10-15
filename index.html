@@ -1,10 +1,37 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+<html>
+<script  src="index.js">
+</script>
+<script>
+initialize(web3)
+</script>
+<body>
+  <h1 id="myAddress">Address: </h1>
+  <h1 id="myEthBalance">My Eth Balance: </h1>
+  <hr>
 
-  </body>
+  <span id="name">Token: </span><br>
+  <span id="symbol">Symbol: </span><br>
+  <span id="totalSupply">Total Supply: </span><br>
+  <span id="contract">Contract: </span><br>
+
+
+  <span id="balance"l>Balance: </span><br>
+
+  <h2>Token Functions</h2>
+  <input id="transferTo" placeholder="transfer to..." ></input><input id="transferAmount" placeholder="amount"></input><button onclick="transfer()">Transfer</button><br>
+  <input id="approveTo" placeholder="approve to..."></input><input id="approveAmount" placeholder="amount"></input><button onclick="approve()">Approve</button><br>
+  <input id="transferFromFrom" placeholder="transfer from..." ><input id="transferFromTo" placeholder="transfer to..."><input id="transferFromAmount" placeholder="amount"></input><button onclick="transferFrom()">Transfer From</button>
+<br>
+<br>
+  <table id="txHistory" style="border: 1px solid black;">
+    <caption>Transaction history</caption>
+    <tr>
+      <th>tx Hash | </th>
+      <th>from | </th>
+      <th>to | </th>
+      <th>amount | </th>
+      <th>time </th>
+    </tr>
+  </table>
+</body>
 </html>
