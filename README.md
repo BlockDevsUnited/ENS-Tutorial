@@ -8,13 +8,13 @@ This tutorial will teach you how to interact with the ENS, and then integrate EN
 A fully working sample Dapp is included.
 
 ### Objectives
-<ol>
+<ul>
     <li>Register your ENS domain name</li>
     <li>Build front end</li>
     <li>Build smart contract</li>
     <li>Build Dapp</li>
     <li>install metamask create a wallet go to ropsten test network get testnet ether (click deposit, then Test faucet)</li>
-</ol>
+</ul>
 
 
 ### Getting Started
