@@ -658,9 +658,10 @@ let tokenTotalSupply
 let tokenBalance
 
 async function initialize(web3){
+	// Enable the use of ethers.js
   ethereum.enable()
 
-	// Provider = metamask
+	// Provider = metamask in this case
   provider = new ethers.providers.Web3Provider(web3.currentProvider)
 	// Convenience
   utils = ethers.utils
@@ -694,9 +695,10 @@ async function send(){
   let sendPromise = signer.sendTransaction(tx);
 }
 
-// Determin if the provided address is an ENS domain or not
+// Determine if the provided address is an ENS domain or not
 async function resolveAddress(address){
 
+		// ENS domain is xxxxx.eth
     if (address.includes(".")){
 			let nameHash = utils.namehash(address)
 			address = await resolverContract.addr(nameHash)
@@ -704,6 +706,7 @@ async function resolveAddress(address){
 		return address
 }
 
+// Loads the ERC20 token
 async function loadToken(){
 	let address //address input
 	address = await resolveAddress(address)
