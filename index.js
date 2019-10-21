@@ -430,7 +430,7 @@ async function send(){
 async function resolveAddress(address){
 
     if (address.includes(".")){
-			let nameHash = utils.namehash(ensName)
+			let nameHash = utils.namehash(address)
 			address = await resolverContract.addr(nameHash)
 		}
 		return address
