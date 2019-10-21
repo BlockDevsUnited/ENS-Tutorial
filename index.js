@@ -715,7 +715,7 @@ async function initialize(web3){
 }
 
 // Send value given in the input
-async function send(){
+async function sendEth(){
 	// Grab the amount and destination address from the webpage
   let address = document.getElementById("addressTo").value
   let amount = document.getElementById("toAmount").value
@@ -733,6 +733,18 @@ async function send(){
   let sendPromise = signer.sendTransaction(tx);
 }
 
+async function sendToken(token) {
+	let address = document.getElementById("transferTo").value
+	let amount = document.getElementById("transferAmount").value
+
+	let tx = {
+		to: address,
+		value: amount
+	}
+
+	let sendPromise = signer.sendTransaction(tx);
+}
+
 // Determine if the provided address is an ENS domain or not
 async function resolveAddress(address){
 
@@ -742,6 +754,20 @@ async function resolveAddress(address){
 			address = await resolverContract.addr(nameHash)
 		}
 		return address
+}
+
+async function displayToken(token) {
+tokenName = await token.name()
+tokenSymbol = await token.symbol()
+tokenC = await token.address
+tokenSupply = utils.formatUnits(await token.totalSupply(), 8)
+tokenBalance = utils.formatUnits(await token.balanceOf(signer._address), 8)
+
+	document.getElementById("name").innerHTML = "Token: <strong>" + tokenName; + "</strong>"
+	document.getElementById("symbol").innerHTML = "Symbol: <strong>" + tokenSymbol + "</strong>"
+	document.getElementById("totalSupply").innerHTML = "Total Supply: <strong>" + tokenSupply + "</strong>"
+		document.getElementById("contract").innerHTML = "Contract: <strong>" + tokenC + "</strong>"
+	document.getElementById("balance").innerHTML = "Balance: <strong>" + tokenBalance + "</strong>"
 }
 
 // Loads the ERC20 token
@@ -754,7 +780,8 @@ async function loadToken(){
 
 	tokenContract = new ethers.Contract(tokenContractAddress,ERC20ABI,signer)
 
-	tokenSymbol = await tokenContract.symbol()
+
 	tokenTotalSupply = await tokenContract.totalSupply()
 	Balance = await tokenContract.balanceOf(signer._address)
+	displayToken(tokenContract)
 }
