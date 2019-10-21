@@ -660,19 +660,27 @@ let tokenBalance
 async function initialize(web3){
   ethereum.enable()
 
+	// Provider = metamask
   provider = new ethers.providers.Web3Provider(web3.currentProvider)
+	// Convenience
   utils = ethers.utils
 
+
+	// List metamask accounts
   let accounts = await provider.listAccounts()
   signer = provider.getSigner(accounts[0])
 
+
+	// Create javascript object which represents of ENS resolver contract
   resolverContract = new ethers.Contract(resolverContractAddress,resolverABI,signer)
 }
 
-
+// Send value given in the input
 async function send(){
+	// Grab the amount and destination address from the webpage
   let address = document.getElementById("addressTo").value
   let amount = document.getElementById("toAmount").value
+	// Create a new transaction with the above information
   let tx = {
       to: address,
       // ... or supports ENS names
@@ -682,9 +690,11 @@ async function send(){
       // use this convenience function to convert ether to wei.
       value: ethers.utils.parseEther(amount)
   }
+	// Send the transaction
   let sendPromise = signer.sendTransaction(tx);
 }
 
+// Determin if the provided address is an ENS domain or not
 async function resolveAddress(address){
 
     if (address.includes(".")){
@@ -697,5 +707,5 @@ async function resolveAddress(address){
 async function loadToken(){
 	let address //address input
 	address = await resolveAddress(address)
-	
+
 }
