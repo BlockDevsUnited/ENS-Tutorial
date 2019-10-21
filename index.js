@@ -1,4 +1,4 @@
-let resolverContractAddress = "0x9C4c3B509e47a298544d0fD0591B47550845e903"
+let resolverContractAddress = "0xD3ddcCDD3b25A8a7423B5bEe360a42146eb4Baf3"//"0x9C4c3B509e47a298544d0fD0591B47550845e903"
 let resolverABI = [
 	{
 		"constant": true,
@@ -398,6 +398,21 @@ let resolvercontract;
 
 let ERC20ABI = [
 	{
+		"constant": true,
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -470,6 +485,21 @@ let ERC20ABI = [
 		"type": "function"
 	},
 	{
+		"constant": true,
+		"inputs": [],
+		"name": "decimals",
+		"outputs": [
+			{
+				"internalType": "uint8",
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -510,6 +540,21 @@ let ERC20ABI = [
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "symbol",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
 			}
 		],
 		"payable": false,
@@ -595,12 +640,6 @@ let ERC20ABI = [
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
 		"anonymous": false,
 		"inputs": [
 			{
@@ -655,7 +694,7 @@ let tokenContract
 let tokenContractAddress
 let tokenSymbol
 let tokenTotalSupply
-let tokenBalance
+let Balance
 
 async function initialize(web3){
 	// Enable the use of ethers.js
@@ -708,7 +747,15 @@ async function resolveAddress(address){
 
 // Loads the ERC20 token
 async function loadToken(){
-	let address //address input
+	let address = document.getElementById("tokenToLoad").value //address input
+	console.log(address)
 	address = await resolveAddress(address)
+	console.log(address)
+	tokenContractAddress = address
 
+	tokenContract = new ethers.Contract(tokenContractAddress,ERC20ABI,signer)
+
+	tokenSymbol = await tokenContract.symbol()
+	tokenTotalSupply = await tokenContract.totalSupply()
+	Balance = await tokenContract.balanceOf(signer._address)
 }
