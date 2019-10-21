@@ -395,7 +395,6 @@ let resolverABI = [
 ]
 let resolvercontract;
 
-
 let ERC20ABI = [
 	{
 		"constant": true,
