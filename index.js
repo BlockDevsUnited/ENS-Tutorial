@@ -395,6 +395,8 @@ let resolverABI = [
 ]
 let resolvercontract;
 
+import { ethers } from 'ethers';
+
 async function initialize(web3){
   ethereum.enable()
 
@@ -407,9 +409,6 @@ async function initialize(web3){
   resolverContract = new ethers.Contract(resolverContractAddress,resolverABI,signer)
 
 }
-
-
-
 
 
 async function send(){
