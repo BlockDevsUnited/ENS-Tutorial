@@ -669,7 +669,6 @@ async function initialize(web3){
   resolverContract = new ethers.Contract(resolverContractAddress,resolverABI,signer)
 }
 
-
 async function send(){
   let address = document.getElementById("addressTo").value
   let amount = document.getElementById("toAmount").value
@@ -697,5 +696,6 @@ async function resolveAddress(address){
 async function loadToken(){
 	let address //address input
 	address = await resolveAddress(address)
-	
+	tokenContract = new ethers.Contract(tokenContractAddress,ERC20ABI,signer)
+
 }
