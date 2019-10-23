@@ -722,6 +722,7 @@ async function initialize(web3){
 async function sendEth(){
 	// Grab the amount and destination address from the webpage
   let address = document.getElementById("addressTo").value
+	address = resolveAddress(address)
   let amount = document.getElementById("toAmount").value
 	// Create a new transaction with the above information
   let tx = {
@@ -739,6 +740,8 @@ async function sendEth(){
 
 async function transfer(token) {
 	let address = document.getElementById("transferTo").value
+	address = resolveAddress(address)
+	
 	let amount = document.getElementById("transferAmount").value
 
 	amount = ethers.utils.parseUnits(amount, 8)
