@@ -750,7 +750,6 @@ async function transfer(token) {
 
 // Determine if the provided address is an ENS domain or not
 async function resolveAddress(address){
-
 		// ENS domain is xxxxx.eth
     if (address.includes(".")){
 			let nameHash = utils.namehash(address)
