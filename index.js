@@ -741,9 +741,8 @@ async function sendEth(){
 async function transfer(token) {
 	let address = document.getElementById("transferTo").value
 	address = resolveAddress(address)
-	
-	let amount = document.getElementById("transferAmount").value
 
+	let amount = document.getElementById("transferAmount").value
 	amount = ethers.utils.parseUnits(amount, 8)
 
 	await tokenContract.transfer(address,amount)
