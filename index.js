@@ -737,16 +737,11 @@ async function sendEth(){
   let sendPromise = signer.sendTransaction(tx);
 }
 
-async function sendToken(token) {
+async function transfer(token) {
 	let address = document.getElementById("transferTo").value
 	let amount = document.getElementById("transferAmount").value
 
-	let tx = {
-		to: address,
-		value: amount
-	}
-
-	let sendPromise = signer.sendTransaction(tx);
+	await tokenContract.transfer(address,amount)
 }
 
 // Determine if the provided address is an ENS domain or not
@@ -778,7 +773,7 @@ tokenBalance = utils.formatUnits(Balance, 8)
 	document.getElementById("name").innerHTML = "Token: <strong>" + tokenName; + "</strong>"
 	document.getElementById("symbol").innerHTML = "Symbol: <strong>" + tokenSymbol + "</strong>"
 	document.getElementById("totalSupply").innerHTML = "Total Supply: <strong>" + tokenSupply + "</strong>"
-		document.getElementById("contract").innerHTML = "Contract: <strong>" + tokenC + "</strong>"
+	document.getElementById("contract").innerHTML = "Contract: <strong>" + tokenC + "</strong>"
 	document.getElementById("balance").innerHTML = "Balance: <strong>" + tokenBalance + "</strong>"
 }
 
