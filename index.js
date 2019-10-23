@@ -695,6 +695,9 @@ let tokenSymbol
 let tokenTotalSupply
 let Balance
 
+let provider
+let signer
+
 async function initialize(web3){
 	// Enable the use of ethers.js
   ethereum.enable()
@@ -709,8 +712,6 @@ async function initialize(web3){
   let accounts = await provider.listAccounts()
 	displayEth(provider)
   signer = provider.getSigner(accounts[0])
-
-
 
 	// Create javascript object which represents of ENS resolver contract
   resolverContract = new ethers.Contract(resolverContractAddress,resolverABI,signer)
@@ -750,6 +751,7 @@ async function transfer(token) {
 
 // Determine if the provided address is an ENS domain or not
 async function resolveAddress(address){
+
 		// ENS domain is xxxxx.eth
     if (address.includes(".")){
 			let nameHash = utils.namehash(address)
@@ -789,7 +791,6 @@ async function loadToken(){
 	tokenContractAddress = address
 
 	tokenContract = new ethers.Contract(tokenContractAddress,ERC20ABI,signer)
-
 
 	tokenTotalSupply = await tokenContract.totalSupply()
 	Balance = await tokenContract.balanceOf(signer._address)
