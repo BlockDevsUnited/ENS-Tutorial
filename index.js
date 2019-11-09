@@ -701,18 +701,14 @@ let signer
 async function initialize(web3){
 	// Enable the use of ethers.js
   ethereum.enable()
-
 	// Provider = metamask in this case
-
   provider = new ethers.providers.Web3Provider(web3.currentProvider)
 	// Convenience
   utils = ethers.utils
-
 	// List metamask accounts
   let accounts = await provider.listAccounts()
 	displayEth(provider)
   signer = provider.getSigner(accounts[0])
-
 	// Create javascript object which represents of ENS resolver contract
   resolverContract = new ethers.Contract(resolverContractAddress,resolverABI,signer)
 	// Display Ethereum Address
@@ -730,7 +726,6 @@ async function sendEth(){
       to: address,
       // ... or supports ENS names
       // to: "ricmoo.firefly.eth",
-
       // We must pass in the amount as wei (1 ether = 1e18 wei), so we
       // use this convenience function to convert ether to wei.
       value: utils.parseEther(amount)
@@ -739,7 +734,7 @@ async function sendEth(){
   let sendPromise = signer.sendTransaction(tx);
 }
 
-async function transfer(token) {
+async function transfer() {
 	let address = document.getElementById("transferTo").value
 	address = resolveAddress(address)
 
@@ -765,14 +760,15 @@ async function displayEth(provider) {
 	let accounts = await provider.listAccounts()
 	let balance = await provider.getBalance(accounts[0])
 	console.log(utils.formatUnits(balance, 18))
-	document.getElementById("myEthBalance").innerHTML = "My Eth Balance: <strong>" + utils.formatUnits(balance, 18) + "</strong>"
+	document.getElementById("myEthBalance").innerHTML = "My Eth Balance: <strong>" +
+	utils.formatUnits(balance, 18) + "</strong>"
 }
 
 async function displayToken(token) {
 tokenName = await token.name()
 tokenSymbol = await token.symbol()
 tokenC = await token.address
-tokenSupply = utils.formatUnits(await token.totalSupply(), 8)
+tokenSupply = utils.formatUnits(await token.totalSupply(), 0)
 tokenBalance = utils.formatUnits(Balance, 8)
 
 	document.getElementById("name").innerHTML = "Token: <strong>" + tokenName; + "</strong>"
